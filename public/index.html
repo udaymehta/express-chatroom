@@ -1,0 +1,44 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatRoom</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <div class="screen join-screen active">
+        <div class="form">
+          <h2>Join ChatRoom</h2>
+          <div class="form-input">
+            <label style="font-family: 'Lora'; color: #555">Username</label>
+            <input type="text" id="username" />
+          </div>
+          <div class="form-input">
+            <button id="join-user">Join</button>
+          </div>
+        </div>
+      </div>
+      <div class="screen chat-screen">
+        <div class="header">
+          <div class="logo">ChatRoom</div>
+          <button id="exit-chat">EXIT</button>
+        </div>
+        <div class="messages"></div>
+        <div class="typebox">
+          <input type="text" id="message-input" />
+          <button id="send-message">
+            <span class="material-symbols-outlined">send </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="code.js"></script>
+  </body>
+</html>
