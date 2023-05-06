@@ -10,22 +10,22 @@ const users = {};
 
 app.use(express.static(path.join(__dirname, "/public")));
 
-io.on("connection", function (socket) {
-    socket.on("newuser", function (username) {
+io.on("connection", function(socket) {
+    socket.on("newuser", function(username) {
         const message = username + " has joined the conversation.";
         console.log(message);
         socket.broadcast.emit("update", message);
         users[socket.id] = username;
         io.emit("users", Object.values(users));
     });
-    socket.on("exituser", function (username) {
+    socket.on("exituser", function(username) {
         const message = username + " has left the conversation.";
         console.log(message);
         socket.broadcast.emit("update", message);
         delete users[socket.id];
         io.emit("users", Object.values(users));
     });
-    socket.on("chat", function (message) {
+    socket.on("chat", function(message) {
         console.log(message);
         socket.broadcast.emit("chat", message);
     });
