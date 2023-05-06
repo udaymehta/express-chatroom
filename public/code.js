@@ -2,6 +2,8 @@
 
     const app = document.querySelector(".app");
     const socket = io();
+    const menuButton = document.getElementById("menu-btn");
+    const menuContent = document.querySelector(".menu-content");
     
     let uname;
 
@@ -69,7 +71,7 @@
             let el = document.createElement("div");
             el.setAttribute("class", "message my-message");
             el.innerHTML = `
-                <div>
+                <div style="background: #a8c5d5;">
                     <div class="name">You</div>
                     <div class="text">${message.text}</div>
                 </div>
@@ -79,7 +81,7 @@
             let el = document.createElement("div");
             el.setAttribute("class", "message other-message");
             el.innerHTML = `
-                <div>
+                <div style="background: #a8afd5;">
                     <div class="name">${message.username}</div>
                     <div class="text">${message.text}</div>
                 </div>
@@ -93,4 +95,30 @@
         }
         messageContainer.scrollTop = messageContainer.scrollHeight - messageContainer.clientHeight;
     }
+    
+    menuButton.addEventListener("click", () => {
+        menuContent.classList.toggle("show");
+    });
+    document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!target.closest(".menu")) {
+        menuContent.classList.remove("show");
+    }
+    });
+
+    function renderUsers(users) {
+    let usersContainer = app.querySelector(".chat-screen .users");
+    usersContainer.innerHTML = "";
+    for (let user of users) {
+        let el = document.createElement("div");
+        el.setAttribute("class", "user");
+        el.textContent = user;
+        usersContainer.appendChild(el);
+        }
+    }
+
+    socket.on("users", function (users) {
+        renderUsers(users);
+    });
+
 })();

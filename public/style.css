@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Mochiy+Pop+One&family=Poppins:wght@300;400;500;600;700;800&family=Press+Start+2P&display=swap");
 
 * {
   margin: 0px;
@@ -10,19 +10,21 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
+  background: #b4b4b4;
 }
 
 .app {
   /* margin-top: 5px; */
   margin-bottom: 5px;
   position: fixed;
-  width: 100%;
+  width: 500px;
   height: 100%;
   max-width: 600px;
-  background: #fff;
-  border-left: 2px solid #eeeee4;
-  border-right: 2px solid #eeeee4;
-  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.09);
+  background: url("bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.2);
 }
 
 .app > .screen {
@@ -50,13 +52,19 @@ body {
 }
 
 .screen h2 {
-  font-family: "Lora", serif;
-  margin-bottom: 20px;
-  font-size: 30px;
-  color: #111;
-  border-bottom: 4px solid #555;
-  padding: 5px 0px;
   display: inline-block;
+  font-family: "Poppins", serif;
+  color: #111111;
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 20px;
+  border-bottom: 4px solid #d6d6d6;
+  padding: 10px;
+  /* background: rgba(214, 214, 214, 0.3); */
+  background: rgba(214, 214, 214, 0.65);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-radius: 10px 10px 0px 0px;
 }
 
 .screen .form-input label {
@@ -66,27 +74,43 @@ body {
 }
 
 .screen .form-input input {
+  font-family: "Poppins";
+  font-weight: 400;
+  border: 2px solid #464646;
   width: 100%;
   padding: 10px;
-  border: 1px solid #555;
   font-size: 16px;
   border-radius: 10px;
+}
+
+.form-input input:focus {
+  outline: none;
+  border: 2px solid #464646;
 }
 
 .screen .form-input button {
   padding: 10px 20px;
-  background: #2d7575;
-  color: #eee;
+  background: #23738f;
+  color: #eeeeee;
   font-size: 16px;
   cursor: pointer;
   outline: inline;
-  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.09);
-  border: none;
+  box-shadow: 0px 0px 20px 10px rgba(1, 1, 1, 0.1);
+  border: 1px solid #1c596f;
   border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.form-input button:hover {
+  transform: scale(1.1);
+  border: 1px solid #1c596f;
 }
 
 .chat-screen .header {
-  background: #2d7575;
+  background: url("bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
   height: 50px;
   display: flex;
   justify-content: space-between;
@@ -95,17 +119,17 @@ body {
 }
 
 .chat-screen .header .logo {
-  font-family: "Lora", serif;
+  font-family: "Poppins", sans-serif;
   font-size: 20px;
-  color: #eee;
+  color: #eeeeee;
   font-weight: 800;
 }
 
 .chat-screen .header button {
   padding: 5px 10px;
-  border: 1px solid #eee;
+  border: 1px solid #eeeeee;
   background: transparent;
-  color: #eee;
+  color: #eeeeee;
   font-size: 17px;
   cursor: pointer;
   outline: none;
@@ -115,8 +139,41 @@ body {
 .chat-screen .messages {
   width: 100%;
   height: calc(100% - 100px);
-  background: #f5f5f5;
+  background: radial-gradient(
+        35.36% 35.36% at 100% 25%,
+        #0000 66%,
+        #d6d6d6 68% 70%,
+        #0000 72%
+      )
+      26px 26px / calc(2 * 26px) calc(2 * 26px),
+    radial-gradient(
+        35.36% 35.36% at 0 75%,
+        #0000 66%,
+        #d6d6d6 68% 70%,
+        #0000 72%
+      )
+      26px 26px / calc(2 * 26px) calc(2 * 26px),
+    radial-gradient(
+        35.36% 35.36% at 100% 25%,
+        #0000 66%,
+        #d6d6d6 68% 70%,
+        #0000 72%
+      )
+      0 0 / calc(2 * 26px) calc(2 * 26px),
+    radial-gradient(
+        35.36% 35.36% at 0 75%,
+        #0000 66%,
+        #d6d6d6 68% 70%,
+        #0000 72%
+      )
+      0 0 / calc(2 * 26px) calc(2 * 26px),
+    repeating-conic-gradient(#f4f4f4 0 25%, #0000 0 50%) 0 0 / calc(2 * 26px)
+      calc(2 * 26px),
+    radial-gradient(#0000 66%, #d6d6d6 68% 70%, #0000 72%) 0 calc(26px / 2) /
+      26px 26px #f4f4f4;
+
   overflow: auto;
+  padding-bottom: 20px;
 }
 
 .chat-screen .messages .message {
@@ -126,9 +183,9 @@ body {
 
 .chat-screen .messages .message > div {
   max-width: 80%;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.05);
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
 }
 
@@ -142,8 +199,10 @@ body {
 
 .chat-screen .messages .message .name {
   font-size: 14px;
-  color: #555;
+  color: #686868;
   margin-bottom: 5px;
+  font-family: "Poppins";
+  font-weight: 600;
 }
 
 .chat-screen .messages .message .text {
@@ -157,10 +216,42 @@ body {
 }
 
 .chat-screen .typebox {
-  width: 99%;
+  width: 100%;
   height: 50px;
   display: flex;
-  background: #f5f5f5;
+  padding-right: 10px;
+  background: radial-gradient(
+        35.36% 35.36% at 100% 25%,
+        #0000 66%,
+        #d6d6d6 68% 70%,
+        #0000 72%
+      )
+      26px 26px / calc(2 * 26px) calc(2 * 26px),
+    radial-gradient(
+        35.36% 35.36% at 0 75%,
+        #0000 66%,
+        #d6d6d6 68% 70%,
+        #0000 72%
+      )
+      26px 26px / calc(2 * 26px) calc(2 * 26px),
+    radial-gradient(
+        35.36% 35.36% at 100% 25%,
+        #0000 66%,
+        #d6d6d6 68% 70%,
+        #0000 72%
+      )
+      0 0 / calc(2 * 26px) calc(2 * 26px),
+    radial-gradient(
+        35.36% 35.36% at 0 75%,
+        #0000 66%,
+        #d6d6d6 68% 70%,
+        #0000 72%
+      )
+      0 0 / calc(2 * 26px) calc(2 * 26px),
+    repeating-conic-gradient(#f4f4f4 0 25%, #0000 0 50%) 0 0 / calc(2 * 26px)
+      calc(2 * 26px),
+    radial-gradient(#0000 66%, #d6d6d6 68% 70%, #0000 72%) 0 calc(26px / 2) /
+      26px 26px #f4f4f4;
 }
 
 .chat-screen .typebox input {
@@ -168,22 +259,91 @@ body {
   height: 50px;
   font-size: 18px;
   padding: 10px;
-  margin-right: 20px;
+  margin-right: 10px;
   margin-left: 10px;
   margin-top: -10px;
   border-radius: 10px;
   border: 2px solid #3b3b3b;
 }
 
+.typebox input:focus {
+  outline: none;
+  border: 2px solid #3b3b3b;
+}
+
+input[type="text"]::placeholder {
+  color: #999999;
+  font-style: italic;
+}
+
 .chat-screen .typebox button {
   width: 80px;
   height: 100%;
-  background: #111;
-  color: #eee;
+  background: #2a2a2a;
+  color: #eeeeee;
   font-size: 16px;
   cursor: pointer;
   outline: none;
   border: none;
   border-radius: 10px;
   margin-top: -10px;
+}
+
+.menu {
+  position: relative;
+}
+
+#menu-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border: 1px solid #eeeeee;
+  font-size: 17px;
+  color: #eeeeee;
+}
+
+#menu-btn:focus {
+  outline: none;
+}
+
+.menu-content {
+  display: none;
+  position: absolute;
+  margin-top: 10px;
+  top: 100%;
+  z-index: 1;
+  border: 1px solid #a1a1a1;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  min-width: 100px;
+}
+
+.menu-content.show {
+  display: block;
+}
+
+.users {
+  padding: 8px 12px;
+  font-size: 1rem;
+  color: #333333;
+}
+
+.user-list {
+  position: relative;
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333333;
+  border-bottom: 2px solid #333333;
+  justify-content: center;
+  display: flex;
+  overflow: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .menu-content {
+    right: unset;
+    left: 0;
+  }
 }

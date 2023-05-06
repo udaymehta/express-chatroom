@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
   </head>
   <body>
     <div class="app">
@@ -16,8 +20,7 @@
         <div class="form">
           <h2>Join ChatRoom</h2>
           <div class="form-input">
-            <label style="font-family: 'Lora'; color: #555">Username</label>
-            <input type="text" id="username" />
+            <input type="text" id="username" placeholder="Username" />
           </div>
           <div class="form-input">
             <button id="join-user">Join</button>
@@ -26,12 +29,27 @@
       </div>
       <div class="screen chat-screen">
         <div class="header">
+          <div class="menu">
+            <button id="menu-btn">
+              <span class="material-symbols-outlined">menu</span>
+            </button>
+            <div class="menu-content">
+              <p class="user-list">User List</p>
+              <div class="users"></div>
+            </div>
+          </div>
           <div class="logo">ChatRoom</div>
-          <button id="exit-chat">EXIT</button>
+          <button id="exit-chat">
+            <span class="material-symbols-outlined"> logout </span>
+          </button>
         </div>
         <div class="messages"></div>
         <div class="typebox">
-          <input type="text" id="message-input" />
+          <input
+            type="text"
+            id="message-input"
+            placeholder="Enter your message here..."
+          />
           <button id="send-message">
             <span class="material-symbols-outlined">send </span>
           </button>
