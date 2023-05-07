@@ -12,11 +12,15 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 io.on("connection", function(socket) {
     socket.on("newuser", function(username) {
-        const message = username + " has joined the conversation.";
-        console.log(message);
-        socket.broadcast.emit("update", message);
-        users[socket.id] = username;
-        io.emit("users", Object.values(users));
+        if (Object.values(users).includes(username)) {
+            socket.emit("username_taken");
+        } else {
+            const message = username + " has joined the conversation.";
+            console.log(message);
+            socket.broadcast.emit("update", message);
+            users[socket.id] = username;
+            io.emit("users", Object.values(users));
+        }
     });
     socket.on("exituser", function(username) {
         const message = username + " has left the conversation.";

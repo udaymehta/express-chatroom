@@ -56,7 +56,7 @@ body {
   color: #111111;
   font-weight: 700;
   font-size: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
   border-bottom: 4px solid #d6d6d6;
   padding: 10px;
   background: rgba(214, 214, 214, 0.65);
@@ -197,10 +197,10 @@ body {
 
 .chat-screen .messages .message .name {
   font-size: 14px;
-  color: #686868;
+  color: #484848;
   margin-bottom: 5px;
   font-family: "Poppins";
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .chat-screen .messages .message .text {

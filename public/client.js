@@ -16,6 +16,12 @@
             app.querySelector(".join-screen #join-user").click();
         }
     });
+    socket.on("username_taken", function () {
+        document.getElementById("username").value = "";
+        document.getElementById("username-exists").style.display = "block";
+        app.querySelector(".join-screen").classList.add("active");
+        app.querySelector(".chat-screen").classList.remove("active");
+    });
 
     app.querySelector(".join-screen #join-user").addEventListener("click", function() {
         let username = app.querySelector(".join-screen #username").value;
@@ -71,7 +77,7 @@
             let el = document.createElement("div");
             el.setAttribute("class", "message my-message");
             el.innerHTML = `
-                <div style="background: #a8c5d5;">
+                <div style="background: #86B9C8;">
                     <div class="name">You</div>
                     <div class="text">${message.text}</div>
                 </div>
@@ -81,7 +87,7 @@
             let el = document.createElement("div");
             el.setAttribute("class", "message other-message");
             el.innerHTML = `
-                <div style="background: #a8afd5;">
+                <div style="background: #9c8cb7;">
                     <div class="name">${message.username}</div>
                     <div class="text">${message.text}</div>
                 </div>
@@ -117,8 +123,7 @@
         }
     }
 
-    socket.on("users", function(users) {
+    socket.on("users", function (users) {
         renderUsers(users);
     });
-
 })();
