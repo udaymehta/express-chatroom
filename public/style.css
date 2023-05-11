@@ -89,8 +89,9 @@ body {
 .screen .form-input button {
   padding: 10px 20px;
   background: #23738f;
-  color: #eeeeee;
+  color: #d1d1d1;
   font-size: 16px;
+  font-weight: 900;
   cursor: pointer;
   outline: inline;
   box-shadow: 0px 0px 20px 10px rgba(1, 1, 1, 0.1);
@@ -126,7 +127,7 @@ body {
 .chat-screen .header button {
   padding: 5px 10px;
   border: 1px solid #eeeeee;
-  background: transparent;
+  background: #516f9566;
   color: #eeeeee;
   font-size: 17px;
   cursor: pointer;
@@ -210,7 +211,10 @@ body {
 .chat-screen .messages .update {
   text-align: center;
   padding: 10px;
-  font: "Roboto" italic;
+  color: #585858;
+  font-family: "Poppins";
+  font-size: 15px;
+  background: #95959524;
 }
 
 .chat-screen .typebox {
@@ -277,7 +281,7 @@ input[type="text"]::placeholder {
 .chat-screen .typebox button {
   width: 80px;
   height: 100%;
-  background: #2a2a2a;
+  background: #243d46f5;
   color: #eeeeee;
   font-size: 16px;
   cursor: pointer;
@@ -292,7 +296,7 @@ input[type="text"]::placeholder {
 }
 
 #menu-btn {
-  background-color: transparent;
+  background-color: #516f9566;
   border: none;
   cursor: pointer;
   border: 1px solid #eeeeee;
@@ -337,6 +341,17 @@ input[type="text"]::placeholder {
   justify-content: center;
   display: flex;
   overflow: auto;
+}
+
+.ph-sign-out,
+.ph-user-list {
+  font-size: 25px;
+  color: #f5f5f5;
+}
+
+.ph-paper-plane-right {
+  font-size: 25px;
+  color: #f5f5f5;
 }
 
 @media screen and (max-width: 500px) {

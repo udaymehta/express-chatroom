@@ -5,15 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Open Chat</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
-    />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </head>
   <body>
     <div class="app">
@@ -49,7 +43,7 @@
         <div class="header">
           <div class="menu">
             <button id="menu-btn">
-              <span class="material-symbols-outlined">menu</span>
+              <i class="ph-fill ph-user-list"></i>
             </button>
             <div class="menu-content">
               <p class="user-list">User List</p>
@@ -58,7 +52,7 @@
           </div>
           <div class="logo">Messages</div>
           <button id="exit-chat">
-            <span class="material-symbols-outlined"> logout </span>
+            <i class="ph-duotone ph-sign-out"></i>
           </button>
         </div>
         <div class="messages"></div>
@@ -69,7 +63,7 @@
             placeholder="Enter your message here..."
           />
           <button id="send-message">
-            <span class="material-symbols-outlined">send </span>
+            <i class="ph-duotone ph-paper-plane-right"></i>
           </button>
         </div>
       </div>
