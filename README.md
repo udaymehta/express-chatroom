@@ -4,4 +4,5 @@ A simple chat application based on express chatrooms allowing users to communica
 
 
 > Homepage (from client side)
+
 ![homepage.png](./homepage.png)
